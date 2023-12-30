@@ -1,15 +1,22 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import ImageList from "./ImageList";
+import HotelPage from "./Hotel";
 
-const ResponseData = ({ response }) => {
+const ResponseData = ({ response, images }) => {
   return (
     <div className=" p-4 rounded-lg shadow-md">
-      <h2 className="text-xl font-bold mb-4">
-        <span role="img" aria-label="emoji"></span> Your travel plan is ready 🎉
+      <h2 className="text-xl font-bold mb-4 text-center">
+        <span role="img" className="text-center" aria-label="emoji"></span> Your travel plan is ready 🎉
       </h2>
       <div className="mb-4">
+        <div className="grid grid-col-6">
+        <ImageList images={images} />
+        </div>
         <ReactMarkdown>{response}</ReactMarkdown>
+        
       </div>
+      <HotelPage></HotelPage>
       <div className="flex justify-end">
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"

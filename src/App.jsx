@@ -4,6 +4,7 @@ import GenerateButton from "./Components/Button";
 import Main from "./Components/Main";
 import Header from "./Components/Header";
 import { Link } from "react-router-dom";
+import HotelPage from "./Components/Hotel";
 
 const defaultValues = {
   destinationCountry: "",
@@ -24,6 +25,7 @@ const AITravelPlanner = () => {
   const [values, setValues] = useState(defaultValues);
   const [selectedInterests, setSelectedInterests] = useState([]);
   const [selectedCuisineTypes, setSelectedCuisineTypes] = useState([]);
+  const [images, setImages] = useState([]);
   const [selectedLanguage, setSelectedLanguage] = useState(
     options.languages[0]
   );
@@ -192,6 +194,7 @@ const AITravelPlanner = () => {
       .then((response) => response.json())
       .then((data) => {
         setResponse(data.response.choices[0].message.content);
+        setImages(data.images);
         setLoading(false);
       })
       .catch((error) => {
@@ -224,7 +227,7 @@ const AITravelPlanner = () => {
 
   return (
     <>
-      <div className="min-h-screen w-auto flex overflow-hidden flex-col">
+     <div className="min-h-screen w-auto flex overflow-hidden flex-col" style={{ backgroundColor: "#f0f0f0" }}>
         <header>
           <Header></Header>
         </header>
@@ -236,9 +239,11 @@ const AITravelPlanner = () => {
               response={response}
               handleSubmit={handleLeadSubmit}
               handleChange={handleLeadChange}
+              images={images}
               email={email}
             />
           </div>
+        
           <div className="w-1/4 p-6">
             <form className="formContainer" onSubmit={handleSubmit}>
               <label htmlFor="destinationCountry">Destination Country</label>

@@ -1,8 +1,8 @@
 {
-  "name": "ai-travel-planner",
+  "name": "travel-ai-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://santoshtechwiz.github.io/ai-travel-planner",
+  "homepage": "https://santoshtechwiz.github.io/travel-ai-web",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -13,6 +13,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.5",
+    "react-photo-view": "^1.2.4",
     "react-router-dom": "^6.21.1",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.8",
@@ -25,7 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
