@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { options, topLocations } from "./Components/Data";
 import GenerateButton from "./Components/Button";
 import Main from "./Components/Main";
-import Header from "./Components/Header";
-import { Link } from "react-router-dom";
-import HotelPage from "./Components/Hotel";
-import Hero from "./Components/HeroSection";
+import NavBar from "./Components/Header";
 import LanguageChip from "./Components/LanguageChip";
 
 const defaultValues = {
@@ -229,13 +226,11 @@ const AITravelPlanner = () => {
 
   return (
     <>
-      <div className="min-h-screen flex overflow-hidden flex-col">
-        <header>
-          <Header></Header>
-        </header>
+      <div className="min-h-screen  flex overflow-hidden flex-col">
+        <NavBar/>
 
         <div className="flex font-sans">
-          <div className="flex-1 lg:flex-col lg:w-5/12">
+          <div className="flex-1 lg:flex-col lg:w-7/12 lg:mr-4">
             <Main
               loading={loading}
               response={response}

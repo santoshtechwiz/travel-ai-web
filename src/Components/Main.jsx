@@ -8,7 +8,9 @@ const Main = ({ loading, response, images, cityName }) => {
   return (
     <div>
       <h1 className="text-2xl text-center font-bold text-blue-500 my-4">⭐️ Travel Planner ⭐️</h1>
-      {!response && (<p className="text-sm text-gray-700 mb-8">Fill the form to generate your itinerary</p>
+      {!response && (
+      
+      <p className="text-sm text-center text-gray-700 mb-8">Fill the form to generate your itinerary</p>
       )}
       <div className="flex justify-center items-center w-full">
         <TypeAnimation
@@ -25,6 +27,11 @@ const Main = ({ loading, response, images, cityName }) => {
             1000,
             () => setTextColor('darkkhaki'), // change text color to darkkhaki
             'Embark on a journey of a lifetime with Travel Planner',
+            500,
+            'Create lasting memories with our personalized itineraries',
+            1000,
+            () => setTextColor('red'), // change text color to darkkhaki
+            'Fill the form to generate your itinerary',
             500,
           ]}
           speed={50}

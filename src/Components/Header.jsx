@@ -1,26 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Use Link for internal navigation
-import SVGComponent from "./Icon";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const NavBar = () => {
   return (
-    <header className="bg-red-400 text-white">
-      <div className="container mx-auto flex justify-between items-center py-4">
-        <Link to="/" className="text-lg font-bold">
-          <SVGComponent />
+    <nav className="px-4 py-2 flex justify-between items-center bg-white dark:bg-gray-800 border-b-2 dark:border-gray-600">
+      <Link to="/" className="text-2xl font-bold text-violet-600 dark:text-white">
+        <div className="logo">
+          {/* Your CSS-based logo goes here */}
+          <span className="logo-text">Travel Planner</span>
+        </div>
+      </Link>
+
+      <div className="lg:hidden">{/* Your mobile menu button goes here */}</div>
+
+      <div className="hidden lg:flex">
+        <Link
+          to="/plan"
+          className="text-gray-700 dark:text-gray-300 hover:text-pink-500 transition duration-300"
+        >
+          Plan
         </Link>
-        <nav className="space-x-4">
-          <Link to="/" className="hover:text-pink-500 transition duration-300">
-            About
-          </Link>
-          <Link to="/plan" className="hover:text-pink-500 transition duration-300">
-            Plan Your Travel
-          </Link>
-          {/* Add more navigation links as needed */}
-        </nav>
       </div>
-    </header>
+    </nav>
   );
 };
 
-export default Header;
+export default NavBar;
