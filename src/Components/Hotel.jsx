@@ -8,7 +8,7 @@ const HotelPage = ({ cityName }) => {
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/hotels/${cityName}`);
+        const response = await fetch(`https://travelai-91rf.onrender.com/hotels/${cityName}`);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -26,7 +26,8 @@ const HotelPage = ({ cityName }) => {
 
   return (
     <div>
-      <h1 className="text-3xl font-semibold mb-4">{cityName}</h1>
+      <hr />
+      <h1 className="text-3xl font-semibold mb-4">Places to visit in {cityName}</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (

@@ -4,7 +4,7 @@ import React from "react";
 const Main = ({ loading, response,images,cityName }) => {
   return (
     <div>
-      <h1 className="text-2xl font-bold text-blue-500 my-4">⭐️ Travel Planner ⭐️</h1>
+      <h1 className="text-3xl text-center font-bold text-blue-500 my-4">⭐️ Travel Planner ⭐️</h1>
       {!response && (
         <p className="text-sm text-gray-700 mb-8">Fill the form to generate your itinerary</p>
       )}

@@ -30,8 +30,11 @@
     @apply font-[Poppins];
   }
 
+  ul{
+    @apply list-outside
+  }
   li {
-    @apply p-4;
+    @apply p-4
   }
 
   h1 {
@@ -55,7 +58,8 @@
   
  /* Apply styles to the form container */
 .formContainer {
-    @apply min-w-[300px] mx-auto p-8 bg-white shadow-md rounded-md mr-10;
+    @apply min-w-[300px] mx-auto p-8 bg-gray-100 shadow-md rounded-md mr-10;
+    transition: transform 0.3s ease-in-out; /* Example of a basic transition for container */
   }
   
   /* Style form labels */
@@ -66,48 +70,22 @@
   /* Style form inputs */
   .formContainer input,
   .formContainer select {
-    @apply w-full py-2.5 mb-4 border border-[#ccc] rounded-md;
+    @apply w-full py-2.5 mb-4 border border-[#ccc] rounded-md transition-colors duration-300 focus:outline-none focus:border-blue-500;
   }
   
-  /* Style the Top Destinations label */
-  .formContainer label[for="topDestinations"] {
-    @apply block mb-2 text-[#333];
-  }
-  
-  /* Style the Interest options */
-  .formContainer label[for="interests"] {
-    @apply mb-2;
-  }
   
   /* Style the Interest div */
   .formContainer div span {
     @apply mr-2 cursor-pointer;
   }
   
-  /* Style the Transportation Type input */
-  .formContainer input#transportationType {
-    /* Add styles as needed */
-  }
   
-  /* Style the Activity Type select */
-  .formContainer select#activityType {
-    @apply h-full; /* Adjust the height as needed */
-  }
-  
-  /* Style the Cuisine Type options */
-  .formContainer label[for="cuisineType"] {
-    @apply mb-2;
-  }
   
   /* Style the Cuisine Type div */
   .formContainer div span {
     @apply mr-2 cursor-pointer;
   }
   
-  /* Style the Language options */
-  .formContainer label[for="language"] {
-    @apply mb-2;
-  }
   
   /* Style the Language option */
   .formContainer div option {
@@ -116,10 +94,38 @@
   
   /* Style the GenerateButton */
   .formContainer .GenerateButton {
-    @apply bg-[#9429a0] text-white py-3 px-6 border-none rounded-md cursor-pointer text-base;
+    @apply bg-[#9429a0] text-white py-3 px-6 border-none rounded-md cursor-pointer text-base transition-colors duration-300;
   }
   
   .formContainer .GenerateButton:hover {
-    @apply bg-[#9429a0];
+    @apply bg-[#801d87];
   }
+  
+  /* Example of hover effect for the entire form container */
+  .formContainer:hover {
+    transform: scale(1.02);
+  }
+  h1 {
+    @apply text-4xl font-bold mb-4
+}
+
+/* Style h2 */
+h2 {
+    @apply text-2xl font-bold mb-2;
+}
+
+/* Style ul */
+ul {
+    @apply  list-disc pl-8 mb-4 ;
+}
+
+/* Style li */
+li {
+    @apply p-2;
+}
+
+/* Style p */
+p {
+    @apply mb-4;
+}
 }

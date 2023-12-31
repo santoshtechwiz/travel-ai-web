@@ -6,6 +6,7 @@ import Header from "./Components/Header";
 import { Link } from "react-router-dom";
 import HotelPage from "./Components/Hotel";
 import Hero from "./Components/HeroSection";
+import LanguageChip from "./Components/LanguageChip";
 
 const defaultValues = {
   destinationCountry: "",
@@ -185,7 +186,7 @@ const AITravelPlanner = () => {
       values.language
     }. `;
     console.log(prompt);
-    fetch("http://localhost:8000/chat", {
+    fetch("https://travelai-91rf.onrender.com/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -246,7 +247,7 @@ const AITravelPlanner = () => {
             />
           </div>
 
-          <div className="flex-1 lg:flex-col lg:w-5/12">
+          <div className="flex-1 w-[300px] lg:flex-col lg:w-5/12">
             <form className="formContainer" onSubmit={handleSubmit}>
               <label htmlFor="destinationCountry">Destination Country</label>
               <input
@@ -448,8 +449,6 @@ const AITravelPlanner = () => {
                         {cuisineType.emoji}
                       </span>
 
-                      <br />
-
                       <span>{cuisineType.name}</span>
                     </div>
                   ))}
@@ -460,20 +459,12 @@ const AITravelPlanner = () => {
                 <label>Language</label>
                 <div className="flex flex-wrap text-2xl">
                   {options.languages.map((option) => (
-                    <option
+                    <LanguageChip
                       key={option.value}
-                      onClick={() => {
-                        handleLanguageClick(option);
-                      }}
-                      value={values.language}
-                      className={
-                        selectedLanguage === option.value ? "selected" : ""
-                      }
-                    >
-                      <span role="img" aria-label={option.label}>
-                        {option.icon}
-                      </span>
-                    </option>
+                      option={option}
+                      selected={selectedLanguage === option.value}
+                      onClick={handleLanguageClick}
+                    />
                   ))}
                 </div>
               </div>
@@ -486,7 +477,6 @@ const AITravelPlanner = () => {
             </form>
           </div>
         </div>
-       
       </div>
     </>
   );
