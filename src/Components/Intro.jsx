@@ -19,7 +19,7 @@ const IntroPage = () => {
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1590086787339-4c6ec74efb00?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "https://plus.unsplash.com/premium_photo-1680964717433-bc078a238170?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "Generate Your Plan Using AI",
       description: "Experience the future of travel planning with our AI-powered itinerary generator.",
     },
@@ -37,7 +37,7 @@ const IntroPage = () => {
             initial={{ opacity: 0, x: "-100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", duration: 1, delay: index * 0.5 }}
+            transition={{ type: "spring", duration: 1, delay: index * 2 }}
           >
             <nav className="bg-white text-blue-500 p-4 w-full fixed top-0">
               <div className="container mx-auto">

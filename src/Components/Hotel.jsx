@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import HotelList from './HoteCard';
 
-
-const HotelPage = () => {
+const HotelPage = ({ cityName }) => {
   const [hotels, setHotels] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        const response = await fetch('https://travelai-91rf.onrender.com/hotels/KUL');
+        const response = await fetch(`http://localhost:8000/hotels/${cityName}`);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        setHotels(data.data);
+        setHotels(data);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching hotels:', error.message);
@@ -23,11 +22,11 @@ const HotelPage = () => {
     };
 
     fetchHotels();
-  }, []);
+  }, [cityName]);
 
   return (
     <div>
-      <h1 className="text-3xl font-semibold mb-4">Hotels in Kuala Lumpur</h1>
+      <h1 className="text-3xl font-semibold mb-4">{cityName}</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (

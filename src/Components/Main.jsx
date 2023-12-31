@@ -1,7 +1,7 @@
 import ResponseData from "./ResponseData";
 import React from "react";
 
-const Main = ({ loading, response,images }) => {
+const Main = ({ loading, response,images,cityName }) => {
   return (
     <div>
       <h1 className="text-2xl font-bold text-blue-500 my-4">⭐️ Travel Planner ⭐️</h1>
@@ -13,7 +13,7 @@ const Main = ({ loading, response,images }) => {
         {loading ? (
           <p className="text-lg text-blue-500">Loading...</p>
         ) : (
-          response && <ResponseData response={response} images={images} />
+          response && <ResponseData response={response} images={images} cityName={cityName} />
         )}
       </div>
     </div>

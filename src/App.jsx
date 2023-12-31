@@ -5,6 +5,7 @@ import Main from "./Components/Main";
 import Header from "./Components/Header";
 import { Link } from "react-router-dom";
 import HotelPage from "./Components/Hotel";
+import Hero from "./Components/HeroSection";
 
 const defaultValues = {
   destinationCountry: "",
@@ -184,7 +185,7 @@ const AITravelPlanner = () => {
       values.language
     }. `;
     console.log(prompt);
-    fetch("https://travelai-91rf.onrender.com/chat", {
+    fetch("http://localhost:8000/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -227,13 +228,13 @@ const AITravelPlanner = () => {
 
   return (
     <>
-     <div className="min-h-screen w-auto flex overflow-hidden flex-col" style={{ backgroundColor: "#f0f0f0" }}>
+      <div className="min-h-screen w-auto flex overflow-hidden flex-col">
         <header>
           <Header></Header>
         </header>
 
-        <div className="flex flex-grow justify-between">
-          <div className="w-3/4 p-6 flex-grow">
+        <div className="flex font-sans">
+          <div className="flex-1 lg:flex-col lg:w-5/12">
             <Main
               loading={loading}
               response={response}
@@ -241,10 +242,11 @@ const AITravelPlanner = () => {
               handleChange={handleLeadChange}
               images={images}
               email={email}
+              cityName={values.destinationCountry}
             />
           </div>
-        
-          <div className="w-1/4 p-6">
+
+          <div className="flex-1 lg:flex-col lg:w-5/12">
             <form className="formContainer" onSubmit={handleSubmit}>
               <label htmlFor="destinationCountry">Destination Country</label>
               <input
@@ -484,13 +486,7 @@ const AITravelPlanner = () => {
             </form>
           </div>
         </div>
-        <div className="fixed bottom-0 w-full bg-white p-4">
-          <div className="container mx-auto">
-            <Link to="/" className="text-lg font-bold text-blue-500">
-              Back to Home
-            </Link>
-          </div>
-        </div>
+       
       </div>
     </>
   );
