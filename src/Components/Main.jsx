@@ -1,6 +1,7 @@
 import ResponseData from "./ResponseData";
 import React, { useState, useEffect } from "react";
 import TypeAnimationComponent from "./TypeAnimationComponent";
+import Wonder from "./Wonder";
 
 const Main = ({ loading, response, images, cityName }) => {
   const [textColor, setTextColor] = useState("black");
@@ -14,6 +15,7 @@ const Main = ({ loading, response, images, cityName }) => {
 
   return (
     <div className="mainContainer">
+  
       <h1 className="text-4xl font-bold mb-4 text-[var(--text-light)] text-center">⭐️ Travel Planner ⭐️</h1>
       {!response && (
         <div className="text-base text-center text-[var(--text-light)] mb-8">

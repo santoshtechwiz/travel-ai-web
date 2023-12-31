@@ -72,6 +72,12 @@ const NavBar = () => {
         >
           Plan Your Trip
         </Link>
+        <Link
+          to="/wonder"
+          className="text-gray-300 hover:text-pink-500 transition duration-300 transform hover:scale-105"
+        >
+         Explore the Wonders
+        </Link>
       </div>
     </nav>
   );

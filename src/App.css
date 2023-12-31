@@ -7,8 +7,11 @@
   --primary-light: #B2DFDB;  /* Your primary light color */
 
   --background-light: #ffffff;  /* White background */
-  --text-light: #FFFFFF;  /* Dark text for white background */
-  --text-dark: #757575;  /* Light text for white background */
+  --background-dark: #1a1a1a;  /* Dark background color for dark mode */
+  --text-light: #ffffff;  /* Light text for dark mode */
+  --text-dark: #757575;  /* Dark text for white background */
+
+  --accent-color: #FF4081;  /* Pink accent color */
 }
 
 /* Import Roboto from Google Fonts */
@@ -72,7 +75,8 @@ body {
   /* Style form inputs */
   .formContainer input,
   .formContainer select {
-    @apply w-full py-2.5 mb-4 border border-[#555] rounded-md transition-colors duration-300 focus:outline-none focus:border-[#6e74c5];
+    @apply w-full py-2.5 mb-4 border border-[#555]  text-gray-600 px-2
+    rounded-md transition-colors duration-300 focus:outline-none focus:border-[#6e74c5];
   }
 
   /* Style the Interest div */
@@ -92,7 +96,7 @@ body {
 
   /* Style the GenerateButton */
   .formContainer .GenerateButton {
-    @apply bg-[#9429a0] text-white py-3 px-6 border-none rounded-md cursor-pointer text-base transition-colors duration-300;
+    @apply bg-[var(--accent-color)] text-white py-3 px-6 border-none rounded-md cursor-pointer text-base transition-colors duration-300;
   }
 
   .formContainer .GenerateButton:hover {
@@ -103,12 +107,12 @@ body {
 
   /* Style h1 */
   h1 {
-    @apply text-4xl font-bold mb-4 text-[var(--text-light)];
+    @apply text-4xl font-bold mb-4 text-[var(--text-dark)];
   }
 
   /* Style h2 */
   h2 {
-    @apply text-2xl font-bold mb-2 text-[var(--text-light)];
+    @apply text-2xl font-bold mb-2 text-[var(--text-dark)];
   }
 
   /* Style ul */
@@ -123,6 +127,6 @@ body {
 
   /* Style p */
   p {
-    @apply mb-4 text-[var(--text-light)];
+    @apply mb-4 text-yellow-500;  /* Set text color to darker */
   }
 }

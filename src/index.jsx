@@ -8,6 +8,8 @@ import IntroPage from './Pages/Intro';
 import reportWebVitals from './reportWebVitals';
 import AboutPage from './Pages/About';
 import PrivacyPolicy from './Pages/Privacy';
+import Wonder from './Components/Wonder';
+import WonderPage from './Pages/Wonder';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -16,6 +18,7 @@ root.render(
         <Route  path="/plan" element={<App />} />
         <Route path="/" element={<IntroPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/wonder" element={<WonderPage />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
     </Router>
