@@ -6,7 +6,6 @@ import './App.css';
 import App from './App';
 import IntroPage from './Pages/Intro';
 import reportWebVitals from './reportWebVitals';
-import AboutComponent from './Components/AboutComponent';
 import AboutPage from './Pages/About';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
