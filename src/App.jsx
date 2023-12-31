@@ -226,11 +226,11 @@ const AITravelPlanner = () => {
 
   return (
     <>
-      <div className="min-h-screen  flex overflow-hidden flex-col">
+      <div className="min-h-screen flex flex-col">
         <NavBar/>
 
-        <div className="flex font-sans">
-          <div className="flex-1 lg:flex-col lg:w-7/12 lg:mr-4">
+        <div className="flex flex-col lg:flex-row">
+        <div className="flex-1 lg:w-7/12 lg:mr-4">
             <Main
               loading={loading}
               response={response}
@@ -242,7 +242,7 @@ const AITravelPlanner = () => {
             />
           </div>
 
-          <div className="flex w-[400px] lg:flex-col">
+          <div className="w-full lg:w-[400px] lg:ml-4 mt-4 lg:mt-0">
             <form className="formContainer" onSubmit={handleSubmit}>
               <label htmlFor="destinationCountry">Destination Country</label>
               <input
