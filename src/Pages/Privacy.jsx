@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
     <>
       <NavBar></NavBar>
 
-      <div className=" font-semibold text-sm text-black mt-10">
+      <div className=" font-semibold text-sm mt-10">
         <h1>Privacy Policy</h1>
         <p>Last updated: December 31, 2023</p>
         <p>

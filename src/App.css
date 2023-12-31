@@ -3,19 +3,41 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 :root {
-    --primary-dark: #5651e5;
-    --primary-light: #709dff;
-  }
-  
-  .icon {
-    color: var(--primary-dark);
-  }
+  --primary-dark: #00796B;  /* Your primary dark color */
+  --primary-light: #B2DFDB;  /* Your primary light color */
+
+  --background-light: #ffffff;  /* White background */
+  --text-light: #FFFFFF;  /* Dark text for white background */
+  --text-dark: #757575;  /* Light text for white background */
+}
+
+/* Import Roboto from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* Update the icon color */
+.icon {
+  color: var(--primary-light);
+}
+
+body {
+  @apply font-sans text-[var(--text-light)] bg-[var(--background-dark)];
+  background-image: url('assets/maldives.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
 @layer base {
+  @font-face {
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* Update the button styles */
   .button {
-    @apply flex bg-red-50 items-center justify-center p-4 text-xs font-semibold 
-      leading-none 
-      text-black border border-none rounded-md
-       cursor-pointer transition duration-200 ease-in-out bg-white;
+    @apply flex bg-[#4853a4] items-center justify-center p-4 text-xs font-semibold 
+      leading-none text-white border border-none rounded-md
+      cursor-pointer transition duration-200 ease-in-out;
   }
 
   .button::before {
@@ -24,107 +46,83 @@
   }
 
   .button:hover {
-    @apply bg-gray-100 border border-gray-300;
+    @apply bg-[#6e74c5] border border-[#6e74c5];
   }
+
+  /* Update body font color and font family */
   body {
-    @apply font-[Poppins];
+    @apply font-sans text-[var(--text-dark)] bg-[var(--background-dark)];
   }
 
-  ul{
-    @apply list-outside
-  }
-  li {
-    @apply p-4
+  /* Apply styles to the form container */
+  .formContainer {
+    @apply min-w-[300px] mx-auto p-8 bg-[#3e3e3e] shadow-md rounded-md mr-10 transition-transform ease-in-out duration-300 transform;
   }
 
+  /* Hover effect for the entire form container */
+  .formContainer:hover {
+    transform: scale(1.02);
+  }
+
+  /* Style form labels */
+  .formContainer label {
+    @apply block mb-2 text-[var(--text-light)] font-bold;
+  }
+
+  /* Style form inputs */
+  .formContainer input,
+  .formContainer select {
+    @apply w-full py-2.5 mb-4 border border-[#555] rounded-md transition-colors duration-300 focus:outline-none focus:border-[#6e74c5];
+  }
+
+  /* Style the Interest div */
+  .formContainer div span {
+    @apply mr-2 cursor-pointer;
+  }
+
+  /* Style the Cuisine Type div */
+  .formContainer div span {
+    @apply mr-2 cursor-pointer;
+  }
+
+  /* Style the Language option */
+  .formContainer div option {
+    @apply cursor-pointer;
+  }
+
+  /* Style the GenerateButton */
+  .formContainer .GenerateButton {
+    @apply bg-[#9429a0] text-white py-3 px-6 border-none rounded-md cursor-pointer text-base transition-colors duration-300;
+  }
+
+  .formContainer .GenerateButton:hover {
+    @apply bg-[#801d87];
+  }
+
+  /* Additional styles */
+
+  /* Style h1 */
   h1 {
-    @apply text-3xl md:text-4xl font-bold;
+    @apply text-4xl font-bold mb-4 text-[var(--text-light)];
   }
 
+  /* Style h2 */
   h2 {
-    @apply text-3xl font-bold;
+    @apply text-2xl font-bold mb-2 text-[var(--text-light)];
   }
 
-  h3 {
-    @apply text-xl font-bold;
-  }
-  button {
-    @apply p-3 border bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white rounded-md;
-  }
-  .icon {
-    @apply text-2xl cursor-pointer;
+  /* Style ul */
+  ul {
+    @apply list-disc pl-8 mb-4;
   }
 
-  
- /* Apply styles to the form container */
-.formContainer {
-  @apply min-w-[300px] mx-auto p-8 bg-amber-300 shadow-md rounded-md mr-10 transition-transform ease-in-out duration-300 transform;
-}
+  /* Style li */
+  li {
+    @apply p-2;
+  }
 
-/* Hover effect for the entire form container */
-.formContainer:hover {
-  transform: scale(1.02);
-}
-
-/* Style form labels */
-.formContainer label {
-  @apply block mb-2 text-[#333] font-bold;
-}
-
-/* Style form inputs */
-.formContainer input,
-.formContainer select {
-  @apply w-full py-2.5 mb-4 border border-[#ccc] rounded-md transition-colors duration-300 focus:outline-none focus:border-blue-500;
-}
-
-/* Style the Interest div */
-.formContainer div span {
-  @apply mr-2 cursor-pointer;
-}
-
-/* Style the Cuisine Type div */
-.formContainer div span {
-  @apply mr-2 cursor-pointer;
-}
-
-/* Style the Language option */
-.formContainer div option {
-  @apply cursor-pointer;
-}
-
-/* Style the GenerateButton */
-.formContainer .GenerateButton {
-  @apply bg-[#9429a0] text-white py-3 px-6 border-none rounded-md cursor-pointer text-base transition-colors duration-300;
-}
-
-.formContainer .GenerateButton:hover {
-  @apply bg-[#801d87];
-}
-
-/* Additional styles */
-
-/* Style h1 */
-h1 {
-  @apply text-4xl font-bold mb-4;
-}
-
-/* Style h2 */
-h2 {
-  @apply text-2xl font-bold mb-2;
-}
-
-/* Style ul */
-ul {
-  @apply list-disc pl-8 mb-4;
-}
-
-/* Style li */
-li {
-  @apply p-2;
-}
-
-/* Style p */
-p {
-  @apply mb-4;
-}
+  /* Style p */
+  p {
+    @apply mb-4 text-[var(--text-light)];
+  }
 }

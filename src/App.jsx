@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { options, topLocations } from "./Components/Data";
 import GenerateButton from "./Components/Button";
 import Main from "./Components/Main";
-
 import LanguageChip from "./Components/LanguageChip";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
-
+import backgroundImage from './assets/maldives.jpg';
 const defaultValues = {
   destinationCountry: "",
   budget: "250 USD",
@@ -228,11 +227,11 @@ const AITravelPlanner = () => {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col">
-        <NavBar/>
+        <div className="min-h-screen flex flex-col" >
+        <NavBar />
 
         <div className="flex flex-col lg:flex-row">
-        <div className="flex-1 lg:w-7/12 lg:mr-4">
+          <div className="flex-1 lg:w-7/12 lg:mr-4">
             <Main
               loading={loading}
               response={response}
