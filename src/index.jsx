@@ -4,8 +4,10 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import App from './App';
-import IntroPage from './Components/Intro';
+import IntroPage from './Pages/Intro';
 import reportWebVitals from './reportWebVitals';
+import AboutComponent from './Components/AboutComponent';
+import AboutPage from './Pages/About';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -13,6 +15,7 @@ root.render(
       <Routes>
         <Route  path="/plan" element={<App />} />
         <Route path="/" element={<IntroPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </Router>
   </React.StrictMode>

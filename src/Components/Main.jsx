@@ -1,50 +1,64 @@
-import { TypeAnimation } from "react-type-animation";
 import ResponseData from "./ResponseData";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import TypeAnimationComponent from "./TypeAnimationComponent";
 
 const Main = ({ loading, response, images, cityName }) => {
   const [textColor, setTextColor] = useState('black');
+
+  // Clear content when a new search is initiated
+  useEffect(() => {
+    if (!loading && !response) {
+      setTextColor('black');
+    }
+  }, [loading, response]);
 
   return (
     <div>
       <h1 className="text-2xl text-center font-bold text-blue-500 my-4">⭐️ Travel Planner ⭐️</h1>
       {!response && (
-      
-      <p className="text-sm text-center text-gray-700 mb-8">Fill the form to generate your itinerary</p>
+        <div className="text-sm text-center text-gray-700 mb-8">
+          <TypeAnimationComponent
+            sequence={[
+              500,
+              'Fill the form to generate your itinerary',
+              500,
+            ]}
+            speed={50}
+            style={{ fontSize: '1em', color: 'gray' }}
+            repeat={Infinity}
+          />
+        </div>
       )}
-      <div className="flex justify-center items-center w-full">
-        <TypeAnimation
-          preRenderFirstString={true}
-          sequence={[
-            500,
-            'Explore exotic destinations around the world', // initially rendered starting point
-            1000,
-            () => setTextColor('aqua'), // change text color to aqua
-            'Immerse yourself in diverse cultures and experiences',
-            1000,
-            () => setTextColor('deeppink'), // change text color to deeppink
-            'Create lasting memories with our personalized itineraries',
-            1000,
-            () => setTextColor('darkkhaki'), // change text color to darkkhaki
-            'Embark on a journey of a lifetime with Travel Planner',
-            500,
-            'Create lasting memories with our personalized itineraries',
-            1000,
-            () => setTextColor('red'), // change text color to darkkhaki
-            'Fill the form to generate your itinerary',
-            500,
-          ]}
-          speed={50}
-          style={{ fontSize: '2em', color: textColor }}
-          repeat={Infinity}
-        />
-      </div>
+      {loading && (
+        <div className="flex justify-center items-center w-full">
+          <TypeAnimationComponent
+            sequence={[
+              500,
+              'Explore exotic destinations around the world',
+              1000,
+              () => setTextColor('aqua'),
+              'Immerse yourself in diverse cultures and experiences',
+              1000,
+              () => setTextColor('deeppink'),
+              'Create lasting memories with our personalized itineraries',
+              1000,
+              () => setTextColor('darkkhaki'),
+              'Embark on a journey of a lifetime with Travel Planner',
+              500,
+              'Create lasting memories with our personalized itineraries',
+              1000,
+              () => setTextColor('red'),
+              'Fill the form to generate your itinerary',
+              500,
+            ]}
+            speed={50}
+            style={{ fontSize: '2em', color: textColor }}
+            repeat={Infinity}
+          />
+        </div>
+      )}
       <div className="mt-8">
-        {loading ? (
-          <p className="text-lg text-blue-500">Loading...</p>
-        ) : (
-          response && <ResponseData response={response} images={images} cityName={cityName} />
-        )}
+        {response && <ResponseData response={response} images={images} cityName={cityName} />}
       </div>
     </div>
   );

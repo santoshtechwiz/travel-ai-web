@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { options, topLocations } from "./Components/Data";
 import GenerateButton from "./Components/Button";
 import Main from "./Components/Main";
-import NavBar from "./Components/Header";
+
 import LanguageChip from "./Components/LanguageChip";
+import NavBar from "./Components/NavBar";
+import Footer from "./Components/Footer";
 
 const defaultValues = {
   destinationCountry: "",
@@ -473,6 +475,7 @@ const AITravelPlanner = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 };
