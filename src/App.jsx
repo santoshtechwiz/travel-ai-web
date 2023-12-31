@@ -229,7 +229,7 @@ const AITravelPlanner = () => {
 
   return (
     <>
-      <div className="min-h-screen w-auto flex overflow-hidden flex-col">
+      <div className="min-h-screen flex overflow-hidden flex-col">
         <header>
           <Header></Header>
         </header>
@@ -247,7 +247,7 @@ const AITravelPlanner = () => {
             />
           </div>
 
-          <div className="flex-1 w-[300px] lg:flex-col lg:w-5/12">
+          <div className="flex w-[400px] lg:flex-col">
             <form className="formContainer" onSubmit={handleSubmit}>
               <label htmlFor="destinationCountry">Destination Country</label>
               <input
