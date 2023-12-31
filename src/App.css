@@ -58,7 +58,7 @@
   
  /* Apply styles to the form container */
 .formContainer {
-  @apply min-w-[300px] mx-auto p-8 bg-gray-100 shadow-md rounded-md mr-10 transition-transform ease-in-out duration-300 transform;
+  @apply min-w-[300px] mx-auto p-8 bg-amber-300 shadow-md rounded-md mr-10 transition-transform ease-in-out duration-300 transform;
 }
 
 /* Hover effect for the entire form container */
