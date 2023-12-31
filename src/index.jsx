@@ -7,6 +7,7 @@ import App from './App';
 import IntroPage from './Pages/Intro';
 import reportWebVitals from './reportWebVitals';
 import AboutPage from './Pages/About';
+import PrivacyPolicy from './Pages/Privacy';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ root.render(
         <Route  path="/plan" element={<App />} />
         <Route path="/" element={<IntroPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
     </Router>
   </React.StrictMode>

@@ -70,7 +70,7 @@ const NavBar = () => {
           to="/plan"
           className="text-gray-300 hover:text-pink-500 transition duration-300 transform hover:scale-105"
         >
-          Plan
+          Plan Your Trip
         </Link>
       </div>
     </nav>
