@@ -2,9 +2,28 @@ import ResponseData from "./ResponseData";
 import React, { useState, useEffect } from "react";
 import TypeAnimationComponent from "./TypeAnimationComponent";
 import Wonder from "./Wonder";
+import KlookAffiliateWidget from "./KlookAffiliateWidget";
 
 const Main = ({ loading, response, images, cityName }) => {
   const [textColor, setTextColor] = useState("black");
+
+  const loadingMessages = [
+    "Connecting to server...",
+    "Crafting your deals...",
+    "Please wait...",
+    "Almost there...",
+    "Grabbing a map and a compass...",
+    "Training carrier pigeons for faster delivery...",
+    "Assembling a team of travel gnomes...",
+    "Summoning the travel spirits...",
+    "Sending a postcard to your inbox...",
+    "Bribing the weather gods for perfect travel conditions...",
+  ];
+  
+  const getRandomLoadingMessage = () => {
+    const randomIndex = Math.floor(Math.random() * loadingMessages.length);
+    return loadingMessages[randomIndex];
+  };
 
   // Clear content when a new search is initiated
   useEffect(() => {
@@ -15,16 +34,11 @@ const Main = ({ loading, response, images, cityName }) => {
 
   return (
     <div className="mainContainer">
-  
       <h1 className="text-4xl font-bold mb-4 text-[var(--text-light)] text-center">Travel Planner</h1>
       {!response && (
         <div className="text-base text-center text-[var(--text-light)] mb-8">
           <TypeAnimationComponent
-            sequence={[
-              500,
-              "Fill the form to generate your itinerary",
-              500,
-            ]}
+            sequence={[500, "Fill the form to generate your itinerary", 500]}
             speed={50}
             style={{ fontSize: "1em", color: "gray" }}
             repeat={Infinity}
@@ -36,21 +50,19 @@ const Main = ({ loading, response, images, cityName }) => {
           <TypeAnimationComponent
             sequence={[
               500,
-              "Explore exotic destinations around the world",
+              getRandomLoadingMessage(),
               1000,
               () => setTextColor("aqua"),
-              "Immerse yourself in diverse cultures and experiences",
+              getRandomLoadingMessage(),
               1000,
               () => setTextColor("deeppink"),
-              "Create lasting memories with our personalized itineraries",
+              getRandomLoadingMessage(),
               1000,
               () => setTextColor("darkkhaki"),
-              "Embark on a journey of a lifetime with Travel Planner",
-              500,
-              "Create lasting memories with our personalized itineraries",
+              getRandomLoadingMessage(),
               1000,
               () => setTextColor("red"),
-              "Fill the form to generate your itinerary",
+              getRandomLoadingMessage(),
               500,
             ]}
             speed={50}
@@ -60,6 +72,9 @@ const Main = ({ loading, response, images, cityName }) => {
         </div>
       )}
       <div className="mt-8">
+        <div className="flex flex-col gap-2">
+          <KlookAffiliateWidget></KlookAffiliateWidget>
+        </div>
         {response && <ResponseData response={response} images={images} cityName={cityName} />}
       </div>
     </div>
