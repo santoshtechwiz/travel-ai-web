@@ -32,17 +32,18 @@ const NavBar = () => {
           >
             Plan Your Trip
           </Link>
-          <Link
-            to="/wonder"
-            className="font-semibold hover:border-b-4 border-yellow-800 border-yellow-500 mb-2 md:mb-0"
-          >
-            Explore The Wonder
-          </Link>
+         
           <Link
             to="/search"
             className="font-semibold hover:border-b-4 border-yellow-800 border-yellow-500 mb-2 md:mb-0"
           >
             Search Hotel
+          </Link>
+          <Link
+            to="/wonder"
+            className="font-semibold hover:border-b-4 border-yellow-800 border-yellow-500 mb-2 md:mb-0"
+          >
+            Explore The Wonder
           </Link>
           <Link
             to="/about"
