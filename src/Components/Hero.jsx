@@ -23,7 +23,7 @@ const Hero = () => {
   const text = "Travel, enjoy and live a new and full life";
 
   return (
-    <div className="flex items-center px-10 max-h-screen">
+    <div className="flex items-center gap-5 px-10 max-h-screen">
       <div className="w-[450px]">
         <div className="grid gap-4">
           <div className="grid gap-4">
@@ -68,7 +68,7 @@ const Hero = () => {
               PLAN YOUR TRIP
             </a>
             <div className="flex items-center space-x-3">
-              <div className="rounded-full  bg-buttonColor p-2  text-textWhite">
+              <div className="rounded-full bg-buttonColor p-2 text-textWhite">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -88,10 +88,10 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Image Container */}
       <div>
-        <div className="absolute top-20 right-40">
-          <img src={Traverller} className="" alt="" />
-        </div>
+        <img src={Traverller} alt="" className=" w-full h-[500px]  object-cover" />
       </div>
     </div>
   );
