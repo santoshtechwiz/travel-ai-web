@@ -9,6 +9,8 @@ import PrivacyPolicy from './Pages/Privacy';
 import WonderPage from './Pages/Wonder';
 import HomePage from './Pages/HomePage';
 import AboutPage from './Pages/AboutPage';
+import HotelPage from './Pages/HotelPage';
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -20,6 +22,7 @@ root.render(
         <Route path="/about" element={<AboutPage />} />
         <Route path="/wonder" element={<WonderPage />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/search" element={<HotelPage />} />
       </Routes>
     </Router>
   </React.StrictMode>

@@ -6,6 +6,7 @@ import LanguageChip from "./Components/LanguageChip";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 import backgroundImage from './assets/maldives.jpg';
+import AffiliateTitles from "./Components/AffilateTitles";
 const defaultValues = {
   destinationCountry: "",
   budget: "250 USD",
@@ -242,8 +243,9 @@ const AITravelPlanner = () => {
               cityName={values.destinationCountry}
             />
           </div>
-
+         
           <div className="w-full lg:w-[350px] lg:ml-4 mt-4 lg:mt-0 mb-10">
+          <AffiliateTitles></AffiliateTitles>
             <form className="formContainer" onSubmit={handleSubmit}>
               <label htmlFor="destinationCountry">Destination Country</label>
               <input

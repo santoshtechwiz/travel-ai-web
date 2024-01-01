@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import HotelList from './HoteCard';
 
-const HotelPage = ({ cityName }) => {
+const HotelPage2 = ({ cityName }) => {
   const [hotels, setHotels] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -37,4 +37,4 @@ const HotelPage = ({ cityName }) => {
   );
 };
 
-export default HotelPage;
+export default HotelPage2;
