@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 // Footer component
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-4 fixed bottom-0 w-full">
+   <div className="mt-10">
+     <footer className="bg-gray-800 text-white py-4 fixed bottom-0 w-full">
       <div className="container mx-auto flex justify-between items-center">
         <div>
           <p className="text-sm">&copy; 2023 Travel Planner</p>
@@ -25,6 +26,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+   </div>
   );
 };
 

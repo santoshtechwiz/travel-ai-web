@@ -24,16 +24,19 @@ function Card({ title, text, imageUrl, isAlternate }) {
       className="mt-10"
       viewport={{ amount: 1 }}
     >
-      <motion.div variants={cardVariants}>
-        <div className={`flex flex-col lg:flex-row ${isAlternate ? "lg:flex-row-reverse" : ""}`}>
-          <div className="max-w-xs lg:max-w-full w-20 h-20 lg:w-48 lg:h-48 object-cover mx-auto mb-4 lg:mb-0 lg:mr-4">
-            <img className="w-full h-full object-cover rounded-full" src={imageUrl} alt={title} />
-          </div>
-          <div className="rounded overflow-hidden bg-white w-full">
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">{title}</div>
-              <p className="text-gray-700 text-base">{text}</p>
-            </div>
+      <motion.div
+        className={`flex bg-white flex-col lg:flex-row ${
+          isAlternate ? "lg:flex-row-reverse" : ""
+        }`}
+        variants={cardVariants}
+      >
+        <div className="w-20 h-20 object-cover rounded-full mx-auto mb-4 lg:mb-0 lg:mr-4">
+          <img className="w-full h-full object-cover rounded-full" src={imageUrl} alt={title} />
+        </div>
+        <div className="rounded overflow-hidden">
+          <div className="px-6 py-4">
+            <div className="font-bold text-xl mb-2">{title}</div>
+            <p className="text-gray-700 text-base">{text}</p>
           </div>
         </div>
       </motion.div>

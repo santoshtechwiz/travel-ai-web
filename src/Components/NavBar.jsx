@@ -1,19 +1,31 @@
 import React, { useState } from "react";
+import {
+  BookOpenIcon,
+  Bars3BottomRightIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
-import Logo from "../assets/Logo.jpg";
 import Decore from "../assets/Decore.png";
 
-const NavBar = () => {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const handleMobileMenuToggle = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
-  };
+const Navbar = () => {
+  let Links = [
+    { name: "HOME", link: "/" },
+    { name: "PLAN", link: "/plan" },
+    { name: "SEARCH", link: "/search" },
+    { name: "SEVEN WONDERS", link: "/wonder" },
+    { name: "ABOUT", link: "/about" },
+  ];
+  let [open, setOpen] = useState(false);
 
   return (
-    <div>
-      <div className="flex items-center justify-between">
-        <div className="text-2xl font-bold">
+    <nav className="mb-10">
+      <div className="shadow-md w-full left-0 ">
+        <div className="md:flex items-center justify-between bg-white py-2 md:px-10 px-7">
+        <img
+            src={Decore}
+            style={{ position: "absolute", right: 0, top: 0, zIndex: -1 }}
+          />
+         
           <Link to="/" className="text-black">
             <div>
               <span className="font-bold text-yellow-700 mr-1 font-extrabold inline-block mt-2">
@@ -24,44 +36,36 @@ const NavBar = () => {
               </span>
             </div>
           </Link>
+          {/* Menu icon */}
+          <div
+            onClick={() => setOpen(!open)}
+            className="absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7"
+          >
+            {open ? <XMarkIcon /> : <Bars3BottomRightIcon />}
+          </div>
+          {/* linke items */}
+          <ul
+            className={`md:flex md:items-center list-none md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+              open ? "top-12" : "top-[-490px]"
+            }`}
+          >
+            {Links.map((link) => (
+              <li className="md:ml-8 md:my-0 my-7 font-semibold">
+                <Link
+                  to={link.link}
+                  className="text-gray-800 hover:text-blue-400 duration-500"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          
+   
+          </ul>
         </div>
-        <div className="flex flex-col md:flex-row justify-start items-center space-x-12 z-50">
-          <Link
-            to="/plan"
-            className="font-semibold hover:border-b-4 border-yellow-800 border-yellow-500 mb-2 md:mb-0"
-          >
-            Plan Your Trip
-          </Link>
-         
-          <Link
-            to="/search"
-            className="font-semibold hover:border-b-4 border-yellow-800 border-yellow-500 mb-2 md:mb-0"
-          >
-            Search Hotel
-          </Link>
-          <Link
-            to="/wonder"
-            className="font-semibold hover:border-b-4 border-yellow-800 border-yellow-500 mb-2 md:mb-0"
-          >
-            Explore The Wonder
-          </Link>
-          <Link
-            to="/about"
-            className="font-semibold hover:border-b-4 border-yellow-800 border-yellow-500 mb-2 md:mb-0"
-          >
-            About
-          </Link>
-        </div>
-
-        <Link to="/">
-          <img
-            src={Decore}
-            style={{ position: "absolute", right: 0, top: 0, zIndex: -1 }}
-          />
-        </Link>
       </div>
-    </div>
+    </nav>
   );
 };
 
-export default NavBar;
+export default Navbar;

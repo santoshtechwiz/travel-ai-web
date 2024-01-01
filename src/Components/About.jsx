@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="pt-60 flex items-center px-10">
+    <div className="flex items-center px-10">
       <div className="w-[450px]">
         <div className="grid gap-4">
           <h2>AI-Based Travel Plan Generator</h2>

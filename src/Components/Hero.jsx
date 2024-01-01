@@ -23,7 +23,7 @@ const Hero = () => {
   const text = "Travel, enjoy and live a new and full life";
 
   return (
-    <div className="pt-60 flex items-center px-10 max-h-screen">
+    <div className="flex items-center px-10 max-h-screen">
       <div className="w-[450px]">
         <div className="grid gap-4">
           <div className="grid gap-4">
