@@ -1,39 +1,48 @@
 import React from 'react';
-import { AiOutlineSearch } from 'react-icons/ai';
-import beachVid from '../assets/beachVid.mp4';
 
 const Hero = () => {
   return (
-    <div className='w-full h-screen relative'>
-      <video
-        className='w-full h-full object-cover'
-        src={beachVid}
-        autoPlay
-        loop
-        muted
-      />
-      <div className='absolute w-full h-full top-0 left-0 bg-gray-900/30'></div>
-      <div className='absolute top-0 w-full h-full flex flex-col justify-center text-center text-white p-4'>
-        <h1>First Class Travel</h1>
-        <h2 className='py-4'>Top 1% Locations Worldwide</h2>
-        <form
-          className='flex justify-between items-center max-w-[700px] mx-auto w-full border p-1
-          rounded-md text-black bg-gray-100/90'
-        >
-          <div>
-            <input
-              className='bg-transparent w-[300px] sm:w-[400px] font-[Poppins] focus:outline-none
-                  '
-              type='text'
-              placeholder='Search Destinations'
-            />
-          </div>
-          <div>
-            <button>
-              <AiOutlineSearch size={20} className='icon' style={{color: '#ffffff'}}  />
-            </button>
-          </div>
-        </form>
+    <div className="pt-60 flex items-center px-10">
+      <div className="w-[450px]">
+        <div className="grid gap-4">
+          <h2>AI-Based Travel Plan Generator</h2>
+          <p>
+            Welcome to our AI-based travel plan generator! We leverage advanced
+            artificial intelligence technology to help you create personalized
+            and exciting travel itineraries.
+          </p>
+          <h3>Advantages</h3>
+          <ul>
+            <li>
+              <strong>Personalized Recommendations:</strong> Our AI analyzes your
+              preferences and provides tailored recommendations for destinations,
+              activities, and more.
+            </li>
+            <li>
+              <strong>Efficiency:</strong> Quickly generate detailed travel plans
+              saving you time in researching and planning.
+            </li>
+            <li>
+              <strong>Budget-Friendly Options:</strong> Receive suggestions that
+              match your budget constraints for accommodations, transportation,
+              and activities.
+            </li>
+            <li>
+              <strong>Rich Itinerary Details:</strong> Get daily recommendations
+              for destinations, activities, and dining options with comprehensive
+              details.
+            </li>
+            <li>
+              <strong>Multilingual Support:</strong> Plan your trip in your
+              preferred language with multilingual support.
+            </li>
+          </ul>
+          <p>
+            Whether you're a seasoned traveler or planning your first adventure,
+            our AI travel planner is here to make your journey memorable and
+            stress-free.
+          </p>
+        </div>
       </div>
     </div>
   );

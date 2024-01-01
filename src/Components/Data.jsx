@@ -86,5 +86,9 @@ export const options = {
     { name: "Milano, Italy", value: "Milano/Italy" },
     { name: "Paris, France", value: "Paris/France" },
     { name: "Los Angeles, CA", value: "Los Angeles/California" },
+    {name:"Bali",value:"Bali/Indonesia"},
+    {name:"Bangkok",value:"Bangkok/Thiland"},
+    {name:"Singapore",value:"Singapore/Singapore"},
+
     // add more top locations as needed
   ];

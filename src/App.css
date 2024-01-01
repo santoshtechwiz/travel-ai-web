@@ -1,42 +1,23 @@
-/* src/styles/tailwind.css */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-:root {
-  --primary-dark: #00796B;  /* Your primary dark color */
-  --primary-light: #B2DFDB;  /* Your primary light color */
-
-  --background-light: #ffffff;  /* White background */
-  --background-dark: #1a1a1a;  /* Dark background color for dark mode */
-  --text-light: #ffffff;  /* Light text for dark mode */
-  --text-dark: #757575;  /* Dark text for white background */
-
-  --accent-color: #FF4081;  /* Pink accent color */
-}
 
 /* Import Roboto from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-/* Update the icon color */
+:root {
+  
+}
 .icon {
   color: var(--primary-light);
 }
 
-body {
-  @apply font-sans text-[var(--text-light)] bg-[var(--background-dark)];
-  background-image: url('assets/maldives.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
 
 @layer base {
-  @font-face {
-    font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+ 
+  body{
+    @apply container bg-red-200  mx-auto
   }
-
-  /* Update the button styles */
   .button {
     @apply flex bg-[#4853a4] items-center justify-center p-4 text-xs font-semibold 
       leading-none text-white border border-none rounded-md
@@ -52,81 +33,45 @@ body {
     @apply bg-[#6e74c5] border border-[#6e74c5];
   }
 
-  /* Update body font color and font family */
-  body {
-    @apply font-sans text-[var(--text-dark)] bg-[var(--background-dark)];
-  }
 
-  /* Apply styles to the form container */
   .formContainer {
-    @apply min-w-[300px] mx-auto p-8 bg-[#3e3e3e] shadow-md rounded-md mr-10 transition-transform ease-in-out duration-300 transform;
+    @apply min-w-[300px] mx-auto p-8 bg-[var(--color-bg-default)] shadow-md 
+    rounded-md mr-10  transform;
   }
 
-  /* Hover effect for the entire form container */
+
   .formContainer:hover {
-    transform: scale(1.02);
+    transform: scale(1.0);
   }
 
-  /* Style form labels */
   .formContainer label {
-    @apply block mb-2 text-[var(--text-light)] font-bold;
+    @apply block mb-2 text-[var(--color-text-default)] font-bold;
   }
 
-  /* Style form inputs */
   .formContainer input,
   .formContainer select {
-    @apply w-full py-2.5 mb-4 border border-[#555]  text-gray-600 px-2
+    @apply w-full py-2.5 mb-4 border border-[#555]  text-[var(--color-text-default)] px-2
     rounded-md transition-colors duration-300 focus:outline-none focus:border-[#6e74c5];
   }
 
-  /* Style the Interest div */
   .formContainer div span {
     @apply mr-2 cursor-pointer;
   }
 
-  /* Style the Cuisine Type div */
   .formContainer div span {
     @apply mr-2 cursor-pointer;
   }
 
-  /* Style the Language option */
   .formContainer div option {
     @apply cursor-pointer;
   }
 
-  /* Style the GenerateButton */
   .formContainer .GenerateButton {
-    @apply bg-[var(--accent-color)] text-white py-3 px-6 border-none rounded-md cursor-pointer text-base transition-colors duration-300;
+    @apply bg-[var(--color-bg-secondary)] text-[var(--color-text-primary)] py-3 px-6 border-none rounded-md cursor-pointer text-base transition-colors duration-300;
   }
 
   .formContainer .GenerateButton:hover {
     @apply bg-[#801d87];
   }
 
-  /* Additional styles */
-
-  /* Style h1 */
-  h1 {
-    @apply text-4xl font-bold mb-4 text-[var(--text-dark)];
-  }
-
-  /* Style h2 */
-  h2 {
-    @apply text-2xl font-bold mb-2 text-[var(--text-dark)];
-  }
-
-  /* Style ul */
-  ul {
-    @apply list-disc pl-8 mb-4;
-  }
-
-  /* Style li */
-  li {
-    @apply p-2;
-  }
-
-  /* Style p */
-  p {
-    @apply mb-4 text-yellow-500;  /* Set text color to darker */
-  }
 }

@@ -27,6 +27,7 @@ const IntroPage = () => {
     // Add more slides as needed
   ];
 
+  // Add this useEffect hook to set overflow-x: hidden on mount and remove it on unmount
   React.useEffect(() => {
     // On mount
     document.body.style.overflowX = "hidden";

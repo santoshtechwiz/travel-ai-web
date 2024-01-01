@@ -227,7 +227,7 @@ const AITravelPlanner = () => {
 
   return (
     <>
-        <div className="min-h-screen flex flex-col" >
+        <div className="h-screen flex flex-col" >
         <NavBar />
 
         <div className="flex flex-col lg:flex-row">

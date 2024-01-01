@@ -1,15 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import NavBar from "../Components/NavBar";
-import AboutComponent from "../Components/AboutComponent";
 import Footer from "../Components/Footer";
+import About from "../Components/About";
 
 const AboutPage = () => {
   return (
   
   <>
     <NavBar></NavBar>
-    <AboutComponent></AboutComponent>
+    <About></About>
     <Footer></Footer>
   </>
   ); 

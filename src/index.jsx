@@ -4,19 +4,19 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import App from './App';
-import IntroPage from './Pages/Intro';
 import reportWebVitals from './reportWebVitals';
-import AboutPage from './Pages/About';
 import PrivacyPolicy from './Pages/Privacy';
-import Wonder from './Components/Wonder';
 import WonderPage from './Pages/Wonder';
+import HomePage from './Pages/HomePage';
+import AboutPage from './Pages/AboutPage';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
       <Routes>
+        
+        <Route path="/" element={<HomePage />} />
         <Route  path="/plan" element={<App />} />
-        <Route path="/" element={<IntroPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/wonder" element={<WonderPage />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
