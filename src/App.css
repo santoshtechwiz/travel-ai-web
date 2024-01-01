@@ -75,3 +75,20 @@
   }
 
 }
+@layer components {
+  h1 {
+    @apply text-4xl font-bold text-gray-800 mb-4; /* Replace text-gray-800 with your desired color */
+  }
+
+  h2 {
+    @apply text-3xl font-bold text-gray-800 mb-3; /* Replace text-gray-800 with your desired color */
+  }
+
+  h3 {
+    @apply text-2xl font-bold text-gray-800 mb-2; /* Replace text-gray-800 with your desired color */
+  }
+
+  p {
+    @apply text-base text-gray-600 mb-4; /* Replace text-gray-600 with your desired color */
+  }
+}

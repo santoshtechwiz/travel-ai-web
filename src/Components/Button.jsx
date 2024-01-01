@@ -31,6 +31,7 @@ const GenerateButton = ({ loading, onClick }) => {
       }}
       onClick={onClick}
       disabled={loading}
+      className="z-1"
     >
       {loading ? "Please wait..." : "Generate"}
     </button>

@@ -227,7 +227,7 @@ const AITravelPlanner = () => {
 
   return (
     <>
-        <div className="h-screen flex flex-col" >
+        <div className=" min-h-screen flex flex-col" >
         <NavBar />
 
         <div className="flex flex-col lg:flex-row">
@@ -243,7 +243,7 @@ const AITravelPlanner = () => {
             />
           </div>
 
-          <div className="w-full lg:w-[400px] lg:ml-4 mt-4 lg:mt-0">
+          <div className="w-full lg:w-[400px] lg:ml-4 mt-4 lg:mt-0 mb-10">
             <form className="formContainer" onSubmit={handleSubmit}>
               <label htmlFor="destinationCountry">Destination Country</label>
               <input
