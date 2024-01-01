@@ -1,8 +1,7 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import ImageList from "./ImageList";
 import HotelPage from "./Hotel";
-
+import rehypeHighlight from 'rehype-highlight'
 const ResponseData = ({ response, images, cityName }) => {
   return (
     <div className="p-4 rounded-lg shadow-md bg-white">
@@ -10,10 +9,9 @@ const ResponseData = ({ response, images, cityName }) => {
         🎉 Your travel plan is ready!
       </h2>
       <div className="mb-4">
-        <div className="grid grid-cols-6 gap-4">
-          {/* <ImageList images={images} /> */}
-        </div>
-        <ReactMarkdown className="text-gray-800">{response}</ReactMarkdown>
+        
+        <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{response}</ReactMarkdown>
+        
       </div>
       <HotelPage cityName={cityName} />
       <div className="flex justify-center mt-4">

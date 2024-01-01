@@ -184,7 +184,7 @@ const AITravelPlanner = () => {
       values.language
     }. `;
     console.log(prompt);
-    fetch("https://travelai-91rf.onrender.com/chat", {
+    fetch("http://localhost:8000/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
