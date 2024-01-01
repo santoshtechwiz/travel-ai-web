@@ -29,6 +29,17 @@
   opacity: 0;
   transition: opacity 300ms;
 }
+/* Add these styles in your CSS or styling solution */
+.services-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+/* Add these styles in your CSS or styling solution */
+
+
+
 
 @layer base {
  
@@ -110,4 +121,14 @@ ul{
   p {
     @apply text-base text-gray-600 mb-4; /* Replace text-gray-600 with your desired color */
   }
+  
+/* Add these styles in your CSS or styling solution */
+
+
+img{
+  @apply w-[200px] 
+}
+
+
+
 }

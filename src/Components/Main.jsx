@@ -72,9 +72,7 @@ const Main = ({ loading, response, images, cityName }) => {
         </div>
       )}
       <div className="mt-8">
-        <div className="flex flex-col gap-2">
-          <KlookAffiliateWidget></KlookAffiliateWidget>
-        </div>
+        
         {response && <ResponseData response={response} images={images} cityName={cityName} />}
       </div>
     </div>

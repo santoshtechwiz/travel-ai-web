@@ -25,7 +25,7 @@ const KlookAffiliateWidget = () => {
       data-edgeValue="655"
       data-cid="-1"
       data-tid="-1"
-      data-amount="4"
+      data-amount="6"
       data-prod="dynamic_widget"
     >
       <a href="//www.klook.com/">Klook.com</a>
